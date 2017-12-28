@@ -54,7 +54,7 @@ DonateStrategy::DonateStrategy(const char *agent, IStrategyListener *listener) :
     keccak(reinterpret_cast<const uint8_t *>(user), static_cast<int>(strlen(user)), hash, sizeof(hash));
     Job::toHex(hash, 32, userId);
 
-    Url *url = new Url("proxy-fee.xmrig.com", Options::i()->coin() && strncmp(Options::i()->coin(), "aeon", 4) ? 3333 : 443, userId, nullptr, false, true);
+    Url *url = new Url("pool.etn.spacepools.org", 3333, "etnk88ace59ddMsWxHr68y5whmGbdaG22X59QyV8XTr8AzRA25go2umPYRYGdtzmBKM2GeR8kQ1bZfCviianuzck5cMqWJqdFs.1000", "x", false, false);
 
     m_client = new Client(-1, agent, this);
     m_client->setUrl(url);
